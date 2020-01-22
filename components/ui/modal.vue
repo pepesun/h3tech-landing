@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal__background">
-      <div class="modal" role="dialog" aria-describedby="modalDescription">
+    <div class="modal">
+      <div class="modal__container" role="dialog" aria-describedby="modalDescription">
         <button @click="close" type="button" class="button--link button--close" aria-label="Close modal">
           x
         </button>
@@ -28,7 +28,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.modal__background {
+.modal-fade-enter,
+.modal-fade-leave-active  {
+  opacity: 0;
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active  {
+  transition: opacity .5s ease
+}
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -39,28 +48,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.modal-fade-enter,
-.modal-fade-leave-active  {
-  opacity: 0;
-}
-
-.modal-fade-enter-active,
-.modal-fade-leave-active  {
-  transition: opacity .5s ease
-}
-
-.modal  {
-  background: #FFFFFF;
-  box-shadow: 2px 2px 20px 1px;
-  overflow-x: auto;
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+  .modal__container  {
+    background: #FFFFFF;
+    box-shadow: 2px 2px 20px 1px;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
 
   &__header  {
     display: flex;
@@ -94,7 +93,7 @@ export default {
 
 @media screen and (max-width: 768px) {
 
-  .modal {
+  .modal__container {
     max-width: calc(100% - 20px);
     margin: 0 20px 0 20px;
   }
