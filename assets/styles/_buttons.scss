@@ -1,0 +1,36 @@
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  color: #161c2d;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 1rem 1.8125rem ;
+  font-size: 1em;
+  line-height: 1.3;
+  border-radius: 40px;
+
+
+  &-primary {
+    background-color: $color-brand;
+    box-shadow: $shadow-light;
+    color: $color-light;
+  }
+
+  &-secondary {
+    background-color: $color-primary;
+    box-shadow: $shadow-light;
+    color: $color-light;
+  }
+
+  &-gold {
+    background-color: $color-orange;
+    box-shadow: $shadow-light;
+    color: $color-light;
+  }
+}
